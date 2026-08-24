@@ -1,9 +1,13 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import AuthEntry from "@/pages/AuthEntry";
+import AppWorkspace from "@/pages/AppWorkspace";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { SwanLabShell } from "./components/SwanLabShell";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { WorkspaceProvider } from "./contexts/WorkspaceContext";
 import Home from "./pages/Home";
 
 function Router() {
@@ -11,6 +15,13 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/login"} component={AuthEntry} />
+      <Route path={"/signup"} component={AuthEntry} />
+      <Route path={"/onboarding"} component={AuthEntry} />
+      <Route path={"/app/:rest*"}><SwanLabShell><AppWorkspace /></SwanLabShell></Route>
+      <Route path={"/app"}><SwanLabShell><AppWorkspace /></SwanLabShell></Route>
+      <Route path={"/docs"}><SwanLabShell><AppWorkspace /></SwanLabShell></Route>
+      <Route path={"/status"}><SwanLabShell><AppWorkspace /></SwanLabShell></Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -32,7 +43,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <WorkspaceProvider><Router /></WorkspaceProvider>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

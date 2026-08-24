@@ -1,0 +1,25 @@
+# SwanLab V1 — Project TODO
+
+- [x] Establish an International Typographic Style design system with white canvas, black grid rules, red square accents, accessible contrast, and responsive behavior.
+- [x] Implement a secure, organization-aware application shell with workspace and project context controls.
+- [x] Implement overview, projects, database, networking, Solana, developer, monitoring, usage, team, billing, settings, and AI assistant routes.
+- [x] Define tenant-scoped domain models and backend procedures for organizations, memberships, projects, resources, API keys, webhook events, monitoring data, and integration status.
+- [x] Build interaction-ready cloud database and networking management interfaces with explicit connection and environment states.
+- [x] Build Solana-ready status, cluster, RPC, wallet-connectivity, and on-chain request visibility interfaces with clear integration state labels.
+- [x] Build scoped API-key, webhook configuration, audit-status, developer configuration, and documentation-entry flows.
+- [x] Build monitoring, error, latency, and usage analytics surfaces with visualizations and alert attention states.
+- [x] Integrate an AI infrastructure assistant interface with an extensible server-side provider boundary.
+- [x] Add owner/workspace notification architecture and clear threshold/health alert handling states.
+- [x] Add unit tests covering critical routing, state mapping, and backend procedure behavior.
+- [x] Verify desktop and mobile rendering, run type checks and tests, and save a release checkpoint.
+- [x] Implement functional workspace and project switching backed by tenant-scoped queries, selection persistence, and create-workspace/project controls.
+- [x] Add tenant-scoped resource management for database, networking, and Solana configuration with explicit provider and connection states.
+- [x] Implement cluster selection, safe wallet-connection state, centralized RPC test/status retrieval, and on-chain request visibility boundaries.
+- [x] Implement project-scoped API-key, webhook endpoint, delivery-event, and audit-event management flows.
+- [x] Add monitoring and usage records plus server-side aggregation procedures that are ready for persisted workspace data.
+- [x] Add notification-policy storage and an owner delivery test flow; leave recurring activation explicitly dependent on production deployment.
+- [x] Implement dedicated documentation, status, and billing route experiences rather than shared placeholder views.
+- [x] Re-run tests and visual verification, review this checklist, and save the release checkpoint.
+- [x] Add a tenant-scoped Solana request record model, list procedure, and recent-request visibility panel.
+- [x] Expose webhook delivery-event history with status and empty states in the developer interface.
+- [x] Re-run validation, review the checklist again, and save the release checkpoint.

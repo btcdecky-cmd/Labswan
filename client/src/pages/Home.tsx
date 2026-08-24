@@ -1,33 +1,14 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { startLogin } from "@/const";
+import { ArrowRight, ChevronRight, ShieldCheck } from "lucide-react";
+import { useLocation } from "wouter";
 
 /**
  * All content in this page are only for example, replace with your own feature implementation
  * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
  */
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
-  );
+  const { isAuthenticated } = useAuth();
+  const [, setLocation] = useLocation();
+  return <main className="swan-auth"><div className="swan-auth-grid"/><section className="relative z-10 grid min-h-screen items-center px-5 py-10 sm:px-10"><div className="mx-auto w-full max-w-6xl"><div className="grid border border-black bg-white lg:grid-cols-[1.35fr_.65fr]"><div className="p-7 sm:p-10"><div className="flex items-center justify-between"><div className="flex items-center gap-2"><span className="swan-mark"/><span className="text-sm font-bold tracking-[-0.04em]">SwanLab</span></div><span className="font-mono text-[10px] uppercase tracking-[0.12em] text-black/45">V1 / Control plane</span></div><p className="mt-20 swan-eyebrow">Cloud infrastructure for on-chain business</p><h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.92] tracking-[-0.07em] sm:text-7xl">A workspace for the systems that matter.</h1><p className="mt-7 max-w-xl text-sm leading-6 text-black/65">SwanLab unifies project-scoped cloud databases, networking, Solana infrastructure, developer access and operations intelligence in one member-aware workspace.</p><div className="mt-10 flex flex-wrap gap-2"><button type="button" onClick={() => isAuthenticated ? setLocation("/app/overview") : startLogin()} className="flex items-center gap-2 border border-black bg-black px-4 py-3 font-mono text-[10px] uppercase tracking-[0.1em] text-white transition-transform active:scale-[0.97]">{isAuthenticated ? "Open workspace" : "Secure sign in"}<ArrowRight className="size-4"/></button><button type="button" onClick={() => setLocation("/app/overview")} className="flex items-center gap-2 border border-black bg-white px-4 py-3 font-mono text-[10px] uppercase tracking-[0.1em] hover:bg-black hover:text-white">Explore product surface <ChevronRight className="size-4"/></button></div></div><aside className="flex flex-col justify-between border-t border-black bg-red-600 p-7 text-white lg:border-l lg:border-t-0 sm:p-10"><div><ShieldCheck className="size-6"/><p className="mt-10 font-mono text-[10px] uppercase tracking-[0.12em] text-white/70">Designed to be specific</p><h2 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.045em]">Structured, tenant-aware, integration-ready.</h2><p className="mt-4 text-sm leading-6 text-white/85">Authentication and organization checks stay server-authorized. Supabase and Helius credentials are configured only when you provide protected environment values.</p></div><div className="border-t border-white/35 pt-4 font-mono text-[10px] uppercase tracking-[0.1em] text-white/80">SwanLab / 2026</div></aside></div></div></section></main>;
 }

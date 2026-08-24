@@ -43,135 +43,74 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --primary: oklch(0.47 0.20 27);
+  --primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.47 0.20 27);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --chart-1: oklch(0.47 0.20 27);
+  --chart-2: oklch(0.28 0 0);
+  --chart-3: oklch(0.48 0 0);
+  --chart-4: oklch(0.70 0 0);
+  --chart-5: oklch(0.86 0 0);
+  --radius: 0px;
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.12 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.12 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --popover-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.12 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.43 0 0);
+  --accent: oklch(0.91 0 0);
+  --accent-foreground: oklch(0.12 0 0);
+  --destructive: oklch(0.47 0.20 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.12 0 0 / 22%);
+  --input: oklch(0.12 0 0 / 25%);
+  --ring: oklch(0.47 0.20 27);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.12 0 0);
+  --sidebar-accent: oklch(0.93 0 0);
+  --sidebar-accent-foreground: oklch(0.12 0 0);
+  --sidebar-border: oklch(0.12 0 0 / 35%);
+  --sidebar-ring: oklch(0.47 0.20 27);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
-  }
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; font-family: "Inter Tight", Arial, Helvetica, sans-serif; letter-spacing: -0.01em; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), [type="reset"]:not(:disabled), a[href], select:not(:disabled), input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) { @apply cursor-pointer; }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
+  .container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+  .flex { min-height: 0; min-width: 0; }
+  .swan-grid { background-image: linear-gradient(to right, rgb(0 0 0 / 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgb(0 0 0 / 0.045) 1px, transparent 1px); background-size: 48px 48px; }
+  .swan-mark { width: 14px; height: 14px; display: inline-block; flex: none; background: #e11d1d; }
+  .swan-sidebar { width: 260px; flex: none; position: fixed; z-index: 20; top: 64px; bottom: 0; border-right: 1px solid black; background: white; display: flex; flex-direction: column; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .swan-content { max-width: 1440px; margin: 0 auto; padding: 32px 20px 64px; }
+  .swan-eyebrow { font-family: "IBM Plex Mono", "SFMono-Regular", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: rgb(0 0 0 / .52); line-height: 1.2; }
+  .swan-section-index { font-family: "IBM Plex Mono", monospace; display: grid; place-items: center; width: 22px; height: 22px; background: #e11d1d; color: white; font-size: 9px; letter-spacing: .05em; }
+  .swan-nav-item { width: 100%; display: flex; align-items: center; gap: 10px; padding: 9px 10px; text-align: left; border: 1px solid transparent; font-size: 13px; color: rgb(0 0 0 / .67); transition: color 160ms, background 160ms, border-color 160ms; }
+  .swan-nav-item:hover { color: black; border-color: rgb(0 0 0 / .25); }
+  .swan-nav-item-active { background: black; color: white; border-color: black; }
+  .swan-nav-item-active:hover { color: white; border-color: black; }
+  .swan-page-heading { max-width: 850px; border-bottom: 1px solid black; padding-bottom: 32px; margin-bottom: 32px; }
+  .swan-page-heading h2 { margin-top: 20px; font-size: clamp(2.25rem, 4.5vw, 4rem); font-weight: 600; letter-spacing: -.065em; line-height: .94; }
+  .swan-page-heading p:last-child { margin-top: 20px; max-width: 650px; font-size: 14px; line-height: 1.65; color: rgb(0 0 0 / .62); }
+  .swan-metric { min-height: 168px; background: white; padding: 16px; border-right: 1px solid rgb(0 0 0 / .25); border-bottom: 1px solid black; }
+  .swan-metric:last-child { border-right: 0; }
+  .swan-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 6px; font-family: "IBM Plex Mono", monospace; font-size: 9px; line-height: 1; text-transform: uppercase; letter-spacing: .08em; border: 1px solid currentColor; white-space: nowrap; }
+  .swan-status::before { content: ""; width: 5px; height: 5px; background: currentColor; }
+  .swan-status-ready { color: #111; }.swan-status-pending { color: rgb(0 0 0 / .52); }.swan-status-attention { color: #bd1111; }
+  .swan-empty { display: flex; min-height: 205px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 18px; border: 1px solid black; background: white; padding: 28px; }
+  .swan-button-black { display: inline-flex; align-items: center; gap: 8px; border: 1px solid black; background: black; color: white; padding: 10px 12px; font-family: "IBM Plex Mono", monospace; font-size: 10px; line-height: 1; text-transform: uppercase; letter-spacing: .1em; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background 160ms, color 160ms; }.swan-button-black:active { transform: scale(.97); }.swan-button-black:hover { background: #e11d1d; border-color: #e11d1d; }
+  .swan-button-quiet { display: inline-flex; align-items: center; border: 1px solid black; background: white; padding: 10px 12px; font-family: "IBM Plex Mono", monospace; font-size: 10px; line-height: 1; text-transform: uppercase; letter-spacing: .1em; transition: background 160ms, color 160ms; }.swan-button-quiet:hover { background: black; color: white; }
+  .swan-auth { min-height: 100vh; background: #fdfdfc; color: #111; }.swan-auth-grid { position: fixed; inset: 0; opacity: .45; background-image: linear-gradient(to right, rgb(0 0 0 / .06) 1px, transparent 1px), linear-gradient(to bottom, rgb(0 0 0 / .06) 1px, transparent 1px); background-size: 64px 64px; }
+  @media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+  @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; }.swan-sidebar { position: sticky; top: 0; height: calc(100vh - 64px); transform: none; }.swan-content { padding: 40px 48px 80px; } }
+  @media (max-width: 1023px) { .swan-metric:nth-child(2n) { border-right: 0; } }
+  @media (max-width: 640px) { .swan-content { padding: 24px 16px 48px; }.swan-metric { min-height: 145px; border-right: 0; } }
 }
